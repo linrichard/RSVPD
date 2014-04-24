@@ -3,6 +3,7 @@ ShowupIos::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
   #
   post 'api/user/create' => 'user#create'
+  post 'api/group/create' => 'group#create'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

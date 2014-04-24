@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140419194254) do
+ActiveRecord::Schema.define(version: 20140423014635) do
 
   create_table "group_users", force: true do |t|
     t.integer  "group_id"
-    t.integer  "user_id"
+    t.integer  "fb_user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "status"
   end
 
   create_table "groups", force: true do |t|
@@ -26,6 +27,7 @@ ActiveRecord::Schema.define(version: 20140419194254) do
     t.text     "details"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "users", force: true do |t|
