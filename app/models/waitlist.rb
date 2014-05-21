@@ -3,7 +3,7 @@ class Waitlist < ActiveRecord::Base
 
   def self.enlist(email)
     return nil if email.blank?
-    code = ""
+    code = Digest::SHA1.hexdigest([Time.now, rand].join)[0..10]
     while Waitlist.where(:code => code).first.present?
       code = Digest::SHA1.hexdigest([Time.now, rand].join)[0..10]
     end
