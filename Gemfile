@@ -32,6 +32,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'twilio-ruby'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
@@ -40,6 +42,10 @@ end
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  actor_id: 1
+  receiver_id: 1
+  action: MyString
+  object_id: 1
+  object_type: MyString
+
+two:
+  actor_id: 1
+  receiver_id: 1
+  action: MyString
+  object_id: 1
+  object_type: MyString

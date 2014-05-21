@@ -1,0 +1,112 @@
+<div class="container public">
+  <div class="content intro heading-wrapper" data-0="top: 20%;" data-600="top: -100%">
+    <div class="description">
+      <%= image_tag "calendar_big.png", :width => "100px", :class => "img-calendar img" %>
+      <h1 class="title">RSVPD</h1>
+      <h2 class="subtitle">The best way to get everyone together</h2>
+    </div>
+  </div>
+
+  <div class="content feed" data-0="top: 150%;" data-700="top: 40%;" data-3000="top: 20%;" data-5000="top: -100%;">
+    <div class="description">
+      <h1 class="title">Feed</h1>
+      <h2 class="subtitle">See all your events in one feed, designed to make it quick and easy to rsvp to events.</h1>
+    </div>
+  </div>
+
+  <div class="content create" data-4000="top: 150%;" data-5000="top: 40%;" data-10000="top: 20%;" data-11000="top: -100%;">
+    <div class="description">
+      <h1 class="title">Create</h1>
+      <h2 class="subtitle">Jot down a plan and invite others to your event.</h1>
+      <h2 class="subtitle" data-7500="opacity: 0;" data-8250="opacity: 1;">Find a place to hangout with your friends quickly and easily with Yelp reviews/ratings.</h1>
+    </div>
+  </div>
+
+  <div class="content groups" data-10000="top: 150%;" data-11000="top: 40%;" data-14000="top: 20%;" data-15000="top: -100%;">
+    <div class="description">
+      <h1 class="title">Groups</h1>
+      <h2 class="subtitle">Create and Invite groups to make it easier to have fun with friends.</h1>
+    </div>
+  </div>
+
+  <div class="content payments" data-14500="top: 150%;" data-15500="top: 40%;" data-20500="top: 20%;" data-21000="top: -100%;">
+    <div class="description">
+      <h1 class="title">Payments</h1>
+      <h2 class="subtitle">Rally everyone to chip in before your event deadline Cashless. Say No to IOUs.</h1>
+      <div class="get-notified" data-19000="opacity:0;" data-20000="opacity:1;">
+        <h2 class="email-enter-desc">Get notified when we launch</h2>
+        <input type="text" class="enlist" placeholder="Email address"/>
+        <p class="feedback"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="iphone-container" data-0="bottom: 9%;" data-500="bottom: 50%;" data-20500="bottom: 50%;" data-21500="bottom: 150%;">
+    <div class="iphone"></div>
+    <div class="tap-gesture"
+      data-1200="top: 215px; left: 210px; opacity:0;"
+      data-1275="opacity:1; transform:scale(1,1);"
+      data-1625="opacity:0; transform:scale(3,3);"
+      data-2099="top: 380px; left: 130px; opacity:0; transform:scale(1,1);"
+      data-2100="opacity:1; transform:scale(1,1);"
+      data-2450="opacity:0; transform:scale(3,3);"
+      data-6999="top: 305px; left: 200px; opacity:0; transform:scale(1,1);"
+      data-7000="opacity:1; transform:scale(1,1);"
+      data-7350="opacity:0; transform:scale(3,3);">
+    </div>
+    <div class="iphone-ss screen-1" data-0="opacity: 1;" data-1350="opacity: 1;"></div>
+    <div class="iphone-ss screen-2" data-1350="opacity: 0;" data-1900="opacity: 1;"></div>
+    <div class="iphone-ss screen-3" data-2100="opacity: 0;" data-2750="opacity: 1;"></div>
+    <div class="iphone-ss screen-4" data-4000="opacity: 0;" data-4600="opacity: 1;"></div>
+    <div class="iphone-ss screen-5" data-7350="opacity: 0;" data-7950="opacity: 1;"></div>
+    <div class="iphone-ss screen-6" data-10000="opacity: 0;" data-11000="opacity: 1;"></div>
+    <div class="iphone-ss screen-7" data-14500="opacity: 0;" data-15500="opacity: 1;"></div>
+    <div class="iphone-ss screen-8" data-18500="opacity: 0;" data-19500="opacity: 1;"></div>
+  </div>
+
+  <div class="invite-container" data-21500="top: 150%;" data-22500="top: 20%;" style="position: fixed;">
+    <h1>Invite your friends to get the party started</h1>
+    <div class="share-container">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= request.original_url %>" data-size="large" data-count="none" data-via="kenniyu" data-lang="fr">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+      <div class="fb-share-button" data-href="<%= request.original_url %>" data-width="2000" data-type="button"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<script type="text/javascript">
+  $().ready(function() {
+    $('.enlist').on('keyup', function(e) {
+      var keyCode = e.keyCode,
+      email,
+      responseStatus,
+      message;
+
+      if (keyCode === 13) {
+        email = $('.enlist').val();
+        $.ajax({
+          url: 'i',
+          type: 'POST',
+          dataType: 'JSON',
+          data: {
+            email: email
+          }
+        }).done(function(data) {
+          responseStatus = data.status;
+          message = data.message;
+
+          if (responseStatus === 0) {
+          } else {
+            $('.enlist').val('');
+          }
+          $('.feedback').show().text(message).delay(3000).fadeOut();
+        });
+      }
+    });
+  });
+</script>
+
+<script type="text/javascript">
+  var s = skrollr.init();
+</script>

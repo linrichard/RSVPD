@@ -4,6 +4,18 @@ ShowupIos::Application.routes.draw do
   #
   post 'api/user/create' => 'user#create'
   post 'api/group/create' => 'group#create'
+  get 'api/groups' => 'group#index'
+  get 'api/group' => 'group#get'
+  get 'api/group/members' => 'group#members'
+
+  get 'api/event/rsvp_deadline' => 'event#get_rsvp_deadline'
+  post 'api/event/rsvp_deadline' => 'event#rsvp_deadline'
+  post 'api/event/create' => 'event#create'
+  post 'api/event/invite' => 'event#invite'
+
+  post 'i' => 'waitlist#enlist'
+
+  root 'public#index'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

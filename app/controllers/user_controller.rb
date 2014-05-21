@@ -4,6 +4,8 @@ class UserController < ApplicationController
   def create
     fb_user_id = params[:fb_user_id]
     access_token = params[:access_token]
+    first_name = params[:first_name]
+    last_name = params[:last_name]
     secret = params[:secret]
 
     if secret != "ken"
@@ -12,12 +14,15 @@ class UserController < ApplicationController
 
     @user = User.where(:fb_user_id => fb_user_id).first
     if @user.present?
-      @user.update_attributes({ :access_token => access_token })
+      @user.update_attributes({
+        :access_token => access_token,
+        :first_name => first_name,
+        :last_name => last_name
+      })
+
       @user.reload
-      logger.debug("user UPDATED")
     else
       @user = User.create(:fb_user_id => fb_user_id, :access_token => access_token)
-      logger.debug("user CREATED")
     end
     logger.debug("user = ")
     logger.debug(@user)
