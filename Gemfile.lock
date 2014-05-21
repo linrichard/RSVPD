@@ -121,6 +121,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
+  jwt
   pg
   rails (= 4.0.1)
   rails_12factor

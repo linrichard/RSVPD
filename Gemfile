@@ -45,6 +45,7 @@ gem 'twilio-ruby'
 group :production do
   gem 'rails_12factor'
   gem 'pg'
+  gem 'jwt'
 end
 
 # Use debugger
