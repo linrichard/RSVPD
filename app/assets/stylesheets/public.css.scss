@@ -26,6 +26,17 @@ body {
   .public .title {
     text-align: center;
     display: inline-block;
+    font-size: 84px;
+    vertical-align: middle;
+    margin-top: 10px;
+  }
+
+  .heading-wrapper .title {
+    margin-left: 20px;
+  }
+
+  .public .subtitle {
+    font-size: 44px;
   }
 
   .public .enlist {
@@ -119,9 +130,20 @@ body {
 }
 
 .content.intro {
-  margin: 20px;
-  font-size: 40px;
 }
 
 .content.feed {
+}
+
+.invite-container {
+  padding-top: 20px;
+  width: 100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  height: 800px;
+}
+
+.share-container {
+padding-top: 30px;
 }
