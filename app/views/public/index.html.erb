@@ -57,6 +57,7 @@ transform-origin: top left;
       <div class="get-notified">
         <h2 class="email-enter-desc">Get notified when we launch</h2>
         <input type="text" class="enlist" placeholder="Email address"/>
+        <button class="waitlist-submit-btn">Submit</button>
         <p class="feedback"></p>
       </div>
     </div>
@@ -91,6 +92,7 @@ transform-origin: top left;
       <div class="get-notified" data-14000="opacity:0;" data-15000="opacity:1;">
         <h2 class="email-enter-desc">Get notified when we launch</h2>
         <input type="text" class="enlist" placeholder="Email address"/>
+        <button class="waitlist-submit-btn">Submit</button>
         <p class="feedback"></p>
       </div>
     </div>
@@ -142,13 +144,15 @@ transform-origin: top left;
 
 <script type="text/javascript">
   $().ready(function() {
-    $('.enlist').on('keyup', function(e) {
-      var keyCode = e.keyCode,
-      email,
+    $('.waitlist-submit-btn').on('click', function(e) {
+      enlist();
+    });
+
+    function enlist() {
+      var email,
       responseStatus,
       message;
 
-      if (keyCode === 13) {
         email = $('.enlist').val();
         $.ajax({
           url: 'i',
@@ -167,6 +171,13 @@ transform-origin: top left;
           }
           $('.feedback').show().text(message).delay(3000).fadeOut();
         });
+    }
+
+    $('.enlist').on('keyup', function(e) {
+      var keyCode = e.keyCode;
+
+      if (keyCode === 13) {
+        enlist();
       }
     });
   });

@@ -5,7 +5,7 @@
 //
 //
 html {
-  background-image: url(/assets/beachv2.jpg);
+  background-image: url(/assets/beachv1.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -146,4 +146,12 @@ body {
 
 .share-container {
 padding-top: 30px;
+}
+
+.waitlist-submit-btn {
+  padding: 11px 20px;
+  color: #ddd;
+  background: #444;
+  border: 0;
+  border-radius: 8px;
 }
