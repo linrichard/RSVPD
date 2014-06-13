@@ -35,6 +35,7 @@ group :doc do
 end
 
 gem 'twilio-ruby'
+gem 'mailchimp-api', '~> 2.0.4'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
