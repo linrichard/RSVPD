@@ -17,6 +17,8 @@ ShowupIos::Application.routes.draw do
 
   root 'public#index'
 
+  get 'admin' => 'admin#index'
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

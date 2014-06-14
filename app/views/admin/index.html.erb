@@ -1,0 +1,32 @@
+
+<section class="admin-controller">
+  <h1>Admin Panel</h1>
+  <div class="table-container">
+    <table class="waitlist-table">
+      <thead>
+        <tr>
+          <td>ID</td>
+          <td>Email</td>
+          <td>Code</td>
+          <td>Status</td>
+          <td>Enlisted</td>
+          <% if false %>
+          <td>Actions</td>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <% @waitlists.each do |w| %>
+        <tr>
+          <td><%= w.id %></td>
+          <td><%= w.email %></td>
+          <td><%= w.code %></td>
+          <td><%= w.status %></td>
+          <td><%= time_ago_in_words(w.created_at) %> ago</td>
+          <% if false %><td><a href="#">Invite</a></td><% end %>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
